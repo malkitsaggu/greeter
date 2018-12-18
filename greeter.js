@@ -1,4 +1,4 @@
-﻿
+﻿// IIFE
 ;(function (global, $) {
 
     var Greetr = function (firstname, lastname, language) {
@@ -22,6 +22,7 @@
         'es': 'Inicio sesion'
     }
 
+    // Add functions to prototype property to enhance performance
     Greetr.prototype = {
 
         fullname: function () {
@@ -68,6 +69,7 @@
 
             this.validate();
 
+            // Method chaining by returning this
             return this;
         },
 
@@ -78,7 +80,8 @@
             return this;
         }
     };
-
+    
+    // Constructor function
     Greetr.init = function (firstname, lastname, language) {
 
         var self = this;
@@ -89,6 +92,8 @@
 
     Greetr.init.prototype = Greetr.prototype;
 
+    // Exposing object 
     global.Greetr = global.G$ = Greetr;
 
+    // Passing window and JQuery object
 }(window, jQuery));
